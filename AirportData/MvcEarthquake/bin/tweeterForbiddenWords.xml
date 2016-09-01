@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TweeterForbiddenWords>
+  <word>GOL</word>
+  <word>FUTBOL</word>
+<word>FÚTBOL</word>
+  <word>JUGADOR</word>
+  <word>SELECCION</word>
+  <word>SELECCIÓN</word>
+  <word>JAPON</word>
+<word>JAPÓN</word>
+ <word>CALIFORNIA</word>
+ <word>GANGSTA</word>
+<word>SKATE</word>
+<word>FRENTEFANTASMA</word>
+<word>QUAKEREDALERT</word>
+<word>MÉXICO</word>
+<word>MEXICO</word>
+<word>INDONESIA</word>
+<word>COSTA RICA</word>
+<word>CHINA</word>
+<word>ITALIA</word>
+<word>PERU</word>
+<word>PERÚ</word>
+<word>PERU</word>
+<word>RUSIA</word>
+<word>ISLANDIA</word>
+<word>TAIWAN</word>
+<word>INDIA</word>
+<word>TONGA</word>
+<word>GUATEMALA</word>
+<word>ECUADOR</word>
+</TweeterForbiddenWords>
