@@ -79,11 +79,11 @@ namespace MvcEarthquake.Businnes
                         var cantidadColumnas = cols.Count;
                         if (cantidadColumnas >= 8)
                         {
-                            var sensible1 = cols[8];
-                            bool isSensible = sensible1.OuterHtml.Contains("#D40000");
+                            var sensible1 = cols[0];
+                            bool isSensible = sensible1.OuterHtml.Contains("#ff0000");
 
 
-                           
+
                             string LocalDateTimeYear = string.Empty;
                             DateTime UTCDateTime = new DateTime();
                             decimal Latitude = 0;
@@ -111,38 +111,16 @@ namespace MvcEarthquake.Businnes
                                          var realtime = DateTime.ParseExact(stringValue, format, CultureInfo.InvariantCulture);
                                          UTCDateTime = GlobalWebData.ToUniversalTime(realtime);
                                         break;
-
-                                    //Latitude
-                                    case (3):
-                                        /*string[] coord1 = value.Split('�');
-                                        string[] coord2 = coord1[1].Split('\'');
-                                        var degrees = Convert.ToDecimal(coord1[0], CultureInfo.InvariantCulture);
-                                        var minutes = Convert.ToDecimal(coord2[0], CultureInfo.InvariantCulture);
-                                        var seconds = Convert.ToDecimal(coord2[1], CultureInfo.InvariantCulture);
-                                        Latitude = Earthquake.GetDecimal(degrees, minutes, seconds);*/
-                                        Latitude = decimal.Parse(value, CultureInfo.InvariantCulture);
-                                        break;
-
-                                    //Longitude
-                                    case (4):
-                                        /*string[] coord3 = value.Split('�');
-                                        string[] coord4 = coord3[1].Split('\'');
-                                        var degrees1 = Convert.ToDecimal(coord3[0], CultureInfo.InvariantCulture);
-                                        var minutes1 = Convert.ToDecimal(coord4[0], CultureInfo.InvariantCulture);
-                                        var seconds1 = Convert.ToDecimal(coord4[1], CultureInfo.InvariantCulture);
-                                        Longitude = Earthquake.GetDecimal(degrees1, minutes1, seconds1);*/
-                                        Longitude = decimal.Parse(value, CultureInfo.InvariantCulture);
-                                        break;
-
+                                    
                                     //Depth
-                                    case (5):
+                                    case (3):
                                         string[] depthArray = value.Split(' ');
                                         decimalValue = Convert.ToDecimal(depthArray[0], CultureInfo.InvariantCulture);
                                         Depth = decimalValue;
                                         break;
 
                                     //Magnitude
-                                    case (6):
+                                    case (4):
                                         string[] magnitudArray = value.Split(' ');
                                         decimalValue = Convert.ToDecimal(magnitudArray[0], CultureInfo.InvariantCulture);
                                         Magnitude = decimalValue;
@@ -151,7 +129,7 @@ namespace MvcEarthquake.Businnes
 
                                         double? d = 3.5;
                                         decimal? topMagnitude = (decimal?)d.Value;
-                                       // decimal topMagnitude = decimal.Parse( "3.5");
+                                        // decimal topMagnitude = decimal.Parse( "3.5");
                                         if (Magnitude >= topMagnitude)
                                         {
                                             isSensible = true;
@@ -176,6 +154,17 @@ namespace MvcEarthquake.Businnes
                                         }
 
                                         MagnitudeType = mtypes;
+                                       
+                                        break;
+
+                                    //Latitude
+                                    case (5):
+                                        Latitude = decimal.Parse(value, CultureInfo.InvariantCulture);                                        
+                                        break;
+                                    
+                                    //Longitude
+                                    case (6):
+                                        Longitude = decimal.Parse(value, CultureInfo.InvariantCulture);
                                         break;
 
                                     //Place

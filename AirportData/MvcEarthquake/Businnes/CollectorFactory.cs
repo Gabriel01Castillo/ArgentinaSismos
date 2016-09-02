@@ -30,7 +30,7 @@ namespace MvcEarthquake.Businnes
                 SourceRepository.Save();
             }
 
-            var urlInpres = "http://www.inpres.gov.ar/seismology/xultimos.php";
+            var urlInpres = "http://www.inpres.gov.ar/desktop/";
             IWebSourceManagerHtml webSource = new MyWebSourceManagerHtml();
             return new InpresEarthquakeCollectorHtml(webSource, urlInpres, inpres, new PlaceRepository(new AplicationContextFactory()), new PlaceFactory(),
                                                                                         new MagnitudeTypeRepository(new AplicationContextFactory()), new MagnitudeTypeFactory(), new EarthquakeFactory());
